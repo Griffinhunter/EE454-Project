@@ -79,7 +79,11 @@ def fill_Matrix(LineData, LineNumber):
 
 #pull voltages from excel file, return matrix of voltages at each bus and 
 def getVoltages(BusData, BusNumber) {
-    #...
+    for i in range(BusNumber):
+        volt = LineData['V Set'].loc[LineData.index[i]]
+        VoltMatrix[i] = volt
+    AngleMatrix = np.zeros(BusNumber)
+    return VoltMatrix, AngleMatrix
     #return k length list matrix of voltages, k length list of angles
 }
 
